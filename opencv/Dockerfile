@@ -3,6 +3,7 @@ FROM python:3.10-slim
 #OpenCv dependencies
 RUN apt update
 RUN apt -y install ffmpeg libsm6 libxext6
+RUN apt -y install git
 
 #OpenCv libraries
 RUN pip install --upgrade pip
