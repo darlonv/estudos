@@ -1,3 +1,7 @@
 import cv2
 
-print('hello')
+try:
+    version = cv2.__version__
+    print(f'OpenCv version {version} installed.')
+except:
+    print('Error loading OpenCv.')
