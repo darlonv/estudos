@@ -1,0 +1,10 @@
+version: '3'
+services:
+    opencv:
+        image: darlon/opencv:1.0
+        build: .
+        volumes:
+            - /home/darlon/Pesquisa/projetos/git/estudos/opencv:/data
+        tty: true
+#        restart: always
+
