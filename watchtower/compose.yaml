@@ -1,0 +1,14 @@
+services:
+  ubuntu:
+    image: darlon/teste
+    container_name: ci-teste
+    # command: sleep 
+
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30 --cleanup ci-
+    
+    
