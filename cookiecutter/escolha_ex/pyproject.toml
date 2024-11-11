@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "escolha-ex"
+version = "0.1.0"
+description = "Teste de escolha de exercícios automatizada"
+authors = ["Darlon <darlonv@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.group.test.dependencies]
+pytest-md-report = "^0.6.2"
+pytest = "^8.3.3"
+
+[tool.pytest.ini_options]
+md_report = true
+md_report_verbose = 0
+md_report_color = "auto"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+cookiecutter = "^2.6.0"
+taskify = "^0.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.settings]
+use_vars = true
+
+[tool.taskipy.variables]
+var = "VARIABLE HERE"
+
+[tool.taskipy.tasks]
+fase1 = "echo Fase 1 {var}"
+fase2 = "echo Fase 2 ==="
+
+pre_fase1_dep = "echo Pre fase 1"
+fase1_dep = "task fase1"
+pre_fase2_dep = "task fase1_dep"
+fase2_dep = "task fase2"
+
+create = "cookiecutter exercicios_template"
+clear = "rm -rf 'Teste'"
+
+

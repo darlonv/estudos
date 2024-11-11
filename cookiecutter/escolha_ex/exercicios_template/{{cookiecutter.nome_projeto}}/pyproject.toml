@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "Trabalho"
+version = "0.1.0"
+description = "Trabalho"
+authors = ["Darlon <darlonv@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+taskify = "^0.0.1"
+
+[tool.taskipy.tasks]
+test-py = "pytest -q"
+test-java = "pytest"
+
+[tool.poetry.group.test.dependencies]
+pytest-md-report = "^0.6.2"
+pytest = "^8.3.3"
+
+[tool.pytest.ini_options]
+md_report = true
+md_report_verbose = 0
+md_report_color = "auto"
+md_report_output = "python_test_output.md"
